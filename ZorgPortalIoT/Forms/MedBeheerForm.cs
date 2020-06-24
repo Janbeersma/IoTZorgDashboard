@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ZorgPortalIoT.Forms
 {
-    public partial class MedBeheerForm : Form
+    public partial class MedBeheerForm : TemplateForm
     {
         public MedBeheerForm()
         {

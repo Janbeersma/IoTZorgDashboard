@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ZorgPortalIoT.Forms
 {
-    public partial class AlarmForm : Form
+    public partial class AlarmForm : TemplateForm
     {
         public AlarmForm()
         {
