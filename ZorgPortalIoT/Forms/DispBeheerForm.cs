@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZorgPortalIoT.Forms
 {
-    public partial class Accountbeheerform : Form
+    public partial class DispBeheerForm : Form
     {
-        public Accountbeheerform()
+        public DispBeheerForm()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace ZorgPortalIoT.Forms
             this.Hide();
             HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
             hoofdpaginaForm.ShowDialog();
-
         }
+
     }
 }

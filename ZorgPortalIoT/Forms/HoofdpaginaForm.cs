@@ -71,36 +71,55 @@ namespace ZorgPortalIoT
         private void MijnAccountBttn_Click(object sender, EventArgs e)
         {
             HideSubmenu();
+            this.Hide();
+            MijnAccountForm mijnAccountForm = new MijnAccountForm();
+            mijnAccountForm.ShowDialog();
         }
 
         private void MedicatieBttn_Click(object sender, EventArgs e)
         {
             ShowSubmenu(MedicatieDropdown);
+            
         }
 
         private void DispenserBttn_Click(object sender, EventArgs e)
         {
             HideSubmenu();
+            this.Hide();
+            DispBeheerForm dispBehForm = new DispBeheerForm();
+            dispBehForm.ShowDialog();
+
         }
 
         private void MedbeheerBttn_Click(object sender, EventArgs e)
         {
             HideSubmenu();
+            this.Hide();
+            MedBeheerForm medBehForm = new MedBeheerForm();
+            medBehForm.ShowDialog();
         }
 
         private void AlarmenBttn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AlarmForm alarmForm = new AlarmForm();
+            alarmForm.ShowDialog();
         }
 
         private void PatientBttn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            PatientForm patientForm = new PatientForm();
+            patientForm.ShowDialog();
         }
 
         private void SettingsBttn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            InstellingenForm instellingenForm = new InstellingenForm();
+            instellingenForm.ShowDialog();
         }
+
+
     }
 }

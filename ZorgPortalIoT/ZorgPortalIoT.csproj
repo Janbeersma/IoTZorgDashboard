@@ -52,11 +52,35 @@
     <Compile Include="Forms\Accountbeheerform.Designer.cs">
       <DependentUpon>Accountbeheerform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AlarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AlarmForm.Designer.cs">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DispBeheerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DispBeheerForm.Designer.cs">
+      <DependentUpon>DispBeheerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HoofdpaginaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HoofdpaginaForm.Designer.cs">
       <DependentUpon>HoofdpaginaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InstellingenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InstellingenForm.Designer.cs">
+      <DependentUpon>InstellingenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MedBeheerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MedBeheerForm.Designer.cs">
+      <DependentUpon>MedBeheerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MijnAccountForm.cs">
       <SubType>Form</SubType>
@@ -64,10 +88,46 @@
     <Compile Include="Forms\MijnAccountForm.Designer.cs">
       <DependentUpon>MijnAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemplateForm.Designer.cs">
+      <DependentUpon>TemplateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Accountbeheerform.resx">
+      <DependentUpon>Accountbeheerform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlarmForm.resx">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DispBeheerForm.resx">
+      <DependentUpon>DispBeheerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HoofdpaginaForm.resx">
       <DependentUpon>HoofdpaginaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InstellingenForm.resx">
+      <DependentUpon>InstellingenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MedBeheerForm.resx">
+      <DependentUpon>MedBeheerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MijnAccountForm.resx">
+      <DependentUpon>MijnAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TemplateForm.resx">
+      <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

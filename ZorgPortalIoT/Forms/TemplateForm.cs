@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace ZorgPortalIoT.Forms
 {
-    public partial class Accountbeheerform : Form
+    public partial class TemplateForm : Form
     {
-        public Accountbeheerform()
+        public TemplateForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
-            hoofdpaginaForm.ShowDialog();
-
         }
     }
 }

@@ -43,15 +43,11 @@
             this.AccountBttn = new System.Windows.Forms.Button();
             this.HoofdpaginaButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.LoginUser = new System.Windows.Forms.TextBox();
-            this.LoginPass = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ZijPanneel.SuspendLayout();
             this.MedicatieDropdown.SuspendLayout();
             this.AccountDropdown.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -273,30 +269,6 @@
             this.panel1.Size = new System.Drawing.Size(219, 106);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.LoginUser);
-            this.panel2.Controls.Add(this.LoginPass);
-            this.panel2.Location = new System.Drawing.Point(786, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 100);
-            this.panel2.TabIndex = 2;
-            // 
-            // LoginUser
-            // 
-            this.LoginUser.Location = new System.Drawing.Point(62, 24);
-            this.LoginUser.Name = "LoginUser";
-            this.LoginUser.Size = new System.Drawing.Size(116, 25);
-            this.LoginUser.TabIndex = 1;
-            // 
-            // LoginPass
-            // 
-            this.LoginPass.Location = new System.Drawing.Point(62, 55);
-            this.LoginPass.Name = "LoginPass";
-            this.LoginPass.Size = new System.Drawing.Size(116, 25);
-            this.LoginPass.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -314,7 +286,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(965, 697);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ZijPanneel);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HoofdpaginaForm";
@@ -324,8 +295,6 @@
             this.MedicatieDropdown.ResumeLayout(false);
             this.AccountDropdown.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -347,9 +316,6 @@
         private System.Windows.Forms.Button MedbeheerBttn;
         private System.Windows.Forms.Button PatientBttn;
         private System.Windows.Forms.Button SettingsBttn;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox LoginUser;
-        private System.Windows.Forms.TextBox LoginPass;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
