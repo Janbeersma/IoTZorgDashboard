@@ -67,7 +67,7 @@
             this.Zijpaneel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Zijpaneel.Location = new System.Drawing.Point(0, 0);
             this.Zijpaneel.Name = "Zijpaneel";
-            this.Zijpaneel.Size = new System.Drawing.Size(200, 697);
+            this.Zijpaneel.Size = new System.Drawing.Size(219, 697);
             this.Zijpaneel.TabIndex = 1;
             // 
             // SettingsBttn
@@ -79,7 +79,7 @@
             this.SettingsBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.SettingsBttn.Location = new System.Drawing.Point(0, 475);
             this.SettingsBttn.Name = "SettingsBttn";
-            this.SettingsBttn.Size = new System.Drawing.Size(200, 45);
+            this.SettingsBttn.Size = new System.Drawing.Size(219, 45);
             this.SettingsBttn.TabIndex = 9;
             this.SettingsBttn.Text = "Instellingen";
             this.SettingsBttn.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.PatientBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.PatientBttn.Location = new System.Drawing.Point(0, 430);
             this.PatientBttn.Name = "PatientBttn";
-            this.PatientBttn.Size = new System.Drawing.Size(200, 45);
+            this.PatientBttn.Size = new System.Drawing.Size(219, 45);
             this.PatientBttn.TabIndex = 8;
             this.PatientBttn.Text = "Patiënten";
             this.PatientBttn.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.AlarmBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.AlarmBttn.Location = new System.Drawing.Point(0, 385);
             this.AlarmBttn.Name = "AlarmBttn";
-            this.AlarmBttn.Size = new System.Drawing.Size(200, 45);
+            this.AlarmBttn.Size = new System.Drawing.Size(219, 45);
             this.AlarmBttn.TabIndex = 7;
             this.AlarmBttn.Text = "Alarmen";
             this.AlarmBttn.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             this.MedicatieDropdown.ForeColor = System.Drawing.Color.White;
             this.MedicatieDropdown.Location = new System.Drawing.Point(0, 310);
             this.MedicatieDropdown.Name = "MedicatieDropdown";
-            this.MedicatieDropdown.Size = new System.Drawing.Size(200, 75);
+            this.MedicatieDropdown.Size = new System.Drawing.Size(219, 75);
             this.MedicatieDropdown.TabIndex = 6;
             // 
             // button2
@@ -133,7 +133,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(0, 35);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 35);
+            this.button2.Size = new System.Drawing.Size(219, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "Medicatie beheer";
             this.button2.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.DispBttn.ForeColor = System.Drawing.Color.Black;
             this.DispBttn.Location = new System.Drawing.Point(0, 0);
             this.DispBttn.Name = "DispBttn";
-            this.DispBttn.Size = new System.Drawing.Size(200, 35);
+            this.DispBttn.Size = new System.Drawing.Size(219, 35);
             this.DispBttn.TabIndex = 2;
             this.DispBttn.Text = "Dispenser";
             this.DispBttn.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.MedicatieBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.MedicatieBttn.Location = new System.Drawing.Point(0, 265);
             this.MedicatieBttn.Name = "MedicatieBttn";
-            this.MedicatieBttn.Size = new System.Drawing.Size(200, 45);
+            this.MedicatieBttn.Size = new System.Drawing.Size(219, 45);
             this.MedicatieBttn.TabIndex = 5;
             this.MedicatieBttn.Text = "Medicatie";
             this.MedicatieBttn.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.AccountDropdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.AccountDropdown.Location = new System.Drawing.Point(0, 190);
             this.AccountDropdown.Name = "AccountDropdown";
-            this.AccountDropdown.Size = new System.Drawing.Size(200, 75);
+            this.AccountDropdown.Size = new System.Drawing.Size(219, 75);
             this.AccountDropdown.TabIndex = 4;
             // 
             // MijnAccountBttn
@@ -185,7 +185,7 @@
             this.MijnAccountBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MijnAccountBttn.Location = new System.Drawing.Point(0, 35);
             this.MijnAccountBttn.Name = "MijnAccountBttn";
-            this.MijnAccountBttn.Size = new System.Drawing.Size(200, 35);
+            this.MijnAccountBttn.Size = new System.Drawing.Size(219, 35);
             this.MijnAccountBttn.TabIndex = 1;
             this.MijnAccountBttn.Text = "Mijn Account";
             this.MijnAccountBttn.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             this.AccountbeheerBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountbeheerBttn.Location = new System.Drawing.Point(0, 0);
             this.AccountbeheerBttn.Name = "AccountbeheerBttn";
-            this.AccountbeheerBttn.Size = new System.Drawing.Size(200, 35);
+            this.AccountbeheerBttn.Size = new System.Drawing.Size(219, 35);
             this.AccountbeheerBttn.TabIndex = 0;
             this.AccountbeheerBttn.Text = "Accountbeheer";
             this.AccountbeheerBttn.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@
             this.AccountBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.AccountBttn.Location = new System.Drawing.Point(0, 145);
             this.AccountBttn.Name = "AccountBttn";
-            this.AccountBttn.Size = new System.Drawing.Size(200, 45);
+            this.AccountBttn.Size = new System.Drawing.Size(219, 45);
             this.AccountBttn.TabIndex = 3;
             this.AccountBttn.Text = "Account";
             this.AccountBttn.UseVisualStyleBackColor = true;
@@ -226,10 +226,11 @@
             this.HoofdpaginaBttn.ForeColor = System.Drawing.Color.DarkGray;
             this.HoofdpaginaBttn.Location = new System.Drawing.Point(0, 100);
             this.HoofdpaginaBttn.Name = "HoofdpaginaBttn";
-            this.HoofdpaginaBttn.Size = new System.Drawing.Size(200, 45);
+            this.HoofdpaginaBttn.Size = new System.Drawing.Size(219, 45);
             this.HoofdpaginaBttn.TabIndex = 2;
             this.HoofdpaginaBttn.Text = "Hoofdpagina";
             this.HoofdpaginaBttn.UseVisualStyleBackColor = true;
+            this.HoofdpaginaBttn.Click += new System.EventHandler(this.HoofdpaginaBttn_Click_1);
             // 
             // LogoPaneel
             // 
@@ -237,7 +238,7 @@
             this.LogoPaneel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPaneel.Location = new System.Drawing.Point(0, 0);
             this.LogoPaneel.Name = "LogoPaneel";
-            this.LogoPaneel.Size = new System.Drawing.Size(200, 100);
+            this.LogoPaneel.Size = new System.Drawing.Size(219, 100);
             this.LogoPaneel.TabIndex = 0;
             // 
             // Logo
@@ -246,7 +247,7 @@
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(0, 0);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(200, 100);
+            this.Logo.Size = new System.Drawing.Size(219, 100);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;

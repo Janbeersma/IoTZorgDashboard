@@ -45,81 +45,14 @@ namespace ZorgPortalIoT.Forms
             }
             else
                 subMenu.Visible = false;
-        }
+        }        
 
-        private void HoofdpaginaButton_Click(object sender, EventArgs e)
+        private void HoofdpaginaBttn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            HoofdpaginaForm Hoofdform = new HoofdpaginaForm();
-            Hoofdform.Show();
-        }
-
-        private void AccountBttn_Click(object sender, EventArgs e)
-        {
-            ShowSubmenu(AccountDropdown);
-        }
-
-        private void AccountbeheerBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            Accountbeheerform Accform = new Accountbeheerform();
-            Accform.ShowDialog();
+            HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
+            hoofdpaginaForm.ShowDialog();
 
         }
-
-        private void MijnAccountBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            MijnAccountForm mijnAccountForm = new MijnAccountForm();
-            mijnAccountForm.ShowDialog();
-        }
-
-        private void MedicatieBttn_Click(object sender, EventArgs e)
-        {
-            ShowSubmenu(MedicatieDropdown);
-
-        }
-
-        private void DispenserBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            DispBeheerForm dispBehForm = new DispBeheerForm();
-            dispBehForm.ShowDialog();
-
-        }
-
-        private void MedbeheerBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            MedBeheerForm medBehForm = new MedBeheerForm();
-            medBehForm.ShowDialog();
-        }
-
-        private void AlarmenBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AlarmForm alarmForm = new AlarmForm();
-            alarmForm.ShowDialog();
-        }
-
-        private void PatientBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            PatientForm patientForm = new PatientForm();
-            patientForm.ShowDialog();
-        }
-
-        private void SettingsBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            InstellingenForm instellingenForm = new InstellingenForm();
-            instellingenForm.ShowDialog();
-        }
-
-
     }
 }

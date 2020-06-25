@@ -49,6 +49,7 @@
             this.Controls.Add(this.button1);
             this.Name = "DispBeheerForm";
             this.Text = "DispBeheerForm";
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
 
         }
