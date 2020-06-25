@@ -17,11 +17,5 @@ namespace ZorgPortalIoT.Forms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
-            hoofdpaginaForm.ShowDialog();
-        }
     }
 }

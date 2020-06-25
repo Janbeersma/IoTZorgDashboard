@@ -34,7 +34,7 @@
             this.PatientBttn = new System.Windows.Forms.Button();
             this.AlarmBttn = new System.Windows.Forms.Button();
             this.MedicatieDropdown = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.MedbeheerBttn = new System.Windows.Forms.Button();
             this.DispBttn = new System.Windows.Forms.Button();
             this.MedicatieBttn = new System.Windows.Forms.Button();
             this.AccountDropdown = new System.Windows.Forms.Panel();
@@ -83,6 +83,7 @@
             this.SettingsBttn.TabIndex = 9;
             this.SettingsBttn.Text = "Instellingen";
             this.SettingsBttn.UseVisualStyleBackColor = true;
+            this.SettingsBttn.Click += new System.EventHandler(this.SettingsBttn_Click);
             // 
             // PatientBttn
             // 
@@ -97,6 +98,7 @@
             this.PatientBttn.TabIndex = 8;
             this.PatientBttn.Text = "Patiënten";
             this.PatientBttn.UseVisualStyleBackColor = true;
+            this.PatientBttn.Click += new System.EventHandler(this.PatientBttn_Click);
             // 
             // AlarmBttn
             // 
@@ -111,11 +113,12 @@
             this.AlarmBttn.TabIndex = 7;
             this.AlarmBttn.Text = "Alarmen";
             this.AlarmBttn.UseVisualStyleBackColor = true;
+            this.AlarmBttn.Click += new System.EventHandler(this.AlarmBttn_Click);
             // 
             // MedicatieDropdown
             // 
             this.MedicatieDropdown.BackColor = System.Drawing.Color.Gray;
-            this.MedicatieDropdown.Controls.Add(this.button2);
+            this.MedicatieDropdown.Controls.Add(this.MedbeheerBttn);
             this.MedicatieDropdown.Controls.Add(this.DispBttn);
             this.MedicatieDropdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.MedicatieDropdown.ForeColor = System.Drawing.Color.White;
@@ -124,19 +127,20 @@
             this.MedicatieDropdown.Size = new System.Drawing.Size(219, 75);
             this.MedicatieDropdown.TabIndex = 6;
             // 
-            // button2
+            // MedbeheerBttn
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(219, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Medicatie beheer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.MedbeheerBttn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MedbeheerBttn.FlatAppearance.BorderSize = 0;
+            this.MedbeheerBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MedbeheerBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedbeheerBttn.ForeColor = System.Drawing.Color.Black;
+            this.MedbeheerBttn.Location = new System.Drawing.Point(0, 35);
+            this.MedbeheerBttn.Name = "MedbeheerBttn";
+            this.MedbeheerBttn.Size = new System.Drawing.Size(219, 35);
+            this.MedbeheerBttn.TabIndex = 3;
+            this.MedbeheerBttn.Text = "Medicatie beheer";
+            this.MedbeheerBttn.UseVisualStyleBackColor = true;
+            this.MedbeheerBttn.Click += new System.EventHandler(this.MedbeheerBttn_Click);
             // 
             // DispBttn
             // 
@@ -151,6 +155,7 @@
             this.DispBttn.TabIndex = 2;
             this.DispBttn.Text = "Dispenser";
             this.DispBttn.UseVisualStyleBackColor = true;
+            this.DispBttn.Click += new System.EventHandler(this.DispBttn_Click);
             // 
             // MedicatieBttn
             // 
@@ -165,6 +170,7 @@
             this.MedicatieBttn.TabIndex = 5;
             this.MedicatieBttn.Text = "Medicatie";
             this.MedicatieBttn.UseVisualStyleBackColor = true;
+            this.MedicatieBttn.Click += new System.EventHandler(this.MedicatieBttn_Click);
             // 
             // AccountDropdown
             // 
@@ -189,6 +195,7 @@
             this.MijnAccountBttn.TabIndex = 1;
             this.MijnAccountBttn.Text = "Mijn Account";
             this.MijnAccountBttn.UseVisualStyleBackColor = true;
+            this.MijnAccountBttn.Click += new System.EventHandler(this.MijnAccountBttn_Click);
             // 
             // AccountbeheerBttn
             // 
@@ -202,6 +209,7 @@
             this.AccountbeheerBttn.TabIndex = 0;
             this.AccountbeheerBttn.Text = "Accountbeheer";
             this.AccountbeheerBttn.UseVisualStyleBackColor = true;
+            this.AccountbeheerBttn.Click += new System.EventHandler(this.AccountbeheerBttn_Click);
             // 
             // AccountBttn
             // 
@@ -216,6 +224,7 @@
             this.AccountBttn.TabIndex = 3;
             this.AccountBttn.Text = "Account";
             this.AccountBttn.UseVisualStyleBackColor = true;
+            this.AccountBttn.Click += new System.EventHandler(this.AccountBttn_Click);
             // 
             // HoofdpaginaBttn
             // 
@@ -281,7 +290,7 @@
         private System.Windows.Forms.Button MijnAccountBttn;
         private System.Windows.Forms.Button MedicatieBttn;
         private System.Windows.Forms.Panel MedicatieDropdown;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button MedbeheerBttn;
         private System.Windows.Forms.Button DispBttn;
         private System.Windows.Forms.Button SettingsBttn;
         private System.Windows.Forms.Button PatientBttn;

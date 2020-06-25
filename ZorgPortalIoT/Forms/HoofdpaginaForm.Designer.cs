@@ -102,7 +102,7 @@
             this.PatientBttn.Text = "Patiënten";
             this.PatientBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PatientBttn.UseVisualStyleBackColor = true;
-            this.PatientBttn.Click += new System.EventHandler(this.PatientBttn_Click);
+            //this.PatientBttn.Click += new System.EventHandler(this.PatientBttn_Click);
             // 
             // AlarmenBttn
             // 
@@ -146,7 +146,7 @@
             this.MedbeheerBttn.Text = "Medicatie beheer";
             this.MedbeheerBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MedbeheerBttn.UseVisualStyleBackColor = true;
-            this.MedbeheerBttn.Click += new System.EventHandler(this.MedbeheerBttn_Click);
+            //this.MedbeheerBttn.Click += new System.EventHandler(this.MedbeheerBttn_Click);
             // 
             // DispenserBttn
             // 
@@ -162,7 +162,7 @@
             this.DispenserBttn.Text = "Dispenser toevoegen";
             this.DispenserBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DispenserBttn.UseVisualStyleBackColor = true;
-            this.DispenserBttn.Click += new System.EventHandler(this.DispenserBttn_Click);
+            //this.DispenserBttn.Click += new System.EventHandler(this.DispenserBttn_Click);
             // 
             // MedicatieBttn
             // 
@@ -179,7 +179,7 @@
             this.MedicatieBttn.Text = "Medicatie";
             this.MedicatieBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MedicatieBttn.UseVisualStyleBackColor = true;
-            this.MedicatieBttn.Click += new System.EventHandler(this.MedicatieBttn_Click);
+            //this.MedicatieBttn.Click += new System.EventHandler(this.MedicatieBttn_Click);
             // 
             // AccountDropdown
             // 
