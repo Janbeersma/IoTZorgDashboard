@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoofdpaginaForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.ZijPanneel = new System.Windows.Forms.Panel();
             this.SettingsBttn = new System.Windows.Forms.Button();
             this.PatientBttn = new System.Windows.Forms.Button();
@@ -44,11 +47,16 @@
             this.HoofdpaginaButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FrontpageGraphPanel = new System.Windows.Forms.Panel();
+            this.sensorTypeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             this.ZijPanneel.SuspendLayout();
             this.MedicatieDropdown.SuspendLayout();
             this.AccountDropdown.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.FrontpageGraphPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sensorTypeChart)).BeginInit();
             this.SuspendLayout();
             // 
             // ZijPanneel
@@ -102,7 +110,7 @@
             this.PatientBttn.Text = "Patiënten";
             this.PatientBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PatientBttn.UseVisualStyleBackColor = true;
-            //this.PatientBttn.Click += new System.EventHandler(this.PatientBttn_Click);
+            this.PatientBttn.Click += new System.EventHandler(this.PatientBttn_Click);
             // 
             // AlarmenBttn
             // 
@@ -146,7 +154,7 @@
             this.MedbeheerBttn.Text = "Medicatie beheer";
             this.MedbeheerBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MedbeheerBttn.UseVisualStyleBackColor = true;
-            //this.MedbeheerBttn.Click += new System.EventHandler(this.MedbeheerBttn_Click);
+            this.MedbeheerBttn.Click += new System.EventHandler(this.MedbeheerBttn_Click);
             // 
             // DispenserBttn
             // 
@@ -162,7 +170,7 @@
             this.DispenserBttn.Text = "Dispenser toevoegen";
             this.DispenserBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DispenserBttn.UseVisualStyleBackColor = true;
-            //this.DispenserBttn.Click += new System.EventHandler(this.DispenserBttn_Click);
+            this.DispenserBttn.Click += new System.EventHandler(this.DispenserBttn_Click);
             // 
             // MedicatieBttn
             // 
@@ -179,7 +187,7 @@
             this.MedicatieBttn.Text = "Medicatie";
             this.MedicatieBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MedicatieBttn.UseVisualStyleBackColor = true;
-            //this.MedicatieBttn.Click += new System.EventHandler(this.MedicatieBttn_Click);
+            this.MedicatieBttn.Click += new System.EventHandler(this.MedicatieBttn_Click);
             // 
             // AccountDropdown
             // 
@@ -280,12 +288,49 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // FrontpageGraphPanel
+            // 
+            this.FrontpageGraphPanel.Controls.Add(this.sensorTypeChart);
+            this.FrontpageGraphPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.FrontpageGraphPanel.Location = new System.Drawing.Point(229, 392);
+            this.FrontpageGraphPanel.Name = "FrontpageGraphPanel";
+            this.FrontpageGraphPanel.Size = new System.Drawing.Size(736, 305);
+            this.FrontpageGraphPanel.TabIndex = 2;
+            // 
+            // sensorTypeChart
+            // 
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.Name = "ChartArea1";
+            this.sensorTypeChart.ChartAreas.Add(chartArea1);
+            this.sensorTypeChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.sensorTypeChart.Legends.Add(legend1);
+            this.sensorTypeChart.Location = new System.Drawing.Point(0, 0);
+            this.sensorTypeChart.Name = "sensorTypeChart";
+            this.sensorTypeChart.Size = new System.Drawing.Size(736, 305);
+            this.sensorTypeChart.TabIndex = 0;
+            this.sensorTypeChart.Text = "chart1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(716, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HoofdpaginaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(965, 697);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FrontpageGraphPanel);
             this.Controls.Add(this.ZijPanneel);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HoofdpaginaForm";
@@ -296,6 +341,8 @@
             this.AccountDropdown.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FrontpageGraphPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sensorTypeChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +364,9 @@
         private System.Windows.Forms.Button PatientBttn;
         private System.Windows.Forms.Button SettingsBttn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel FrontpageGraphPanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart sensorTypeChart;
     }
 }
 

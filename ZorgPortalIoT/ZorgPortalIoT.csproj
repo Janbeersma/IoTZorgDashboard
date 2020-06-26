@@ -158,6 +158,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -186,6 +187,12 @@
     </Compile>
     <Compile Include="Forms\DispBeheerForm.Designer.cs">
       <DependentUpon>DispBeheerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DispenserCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DispenserCreate.Designer.cs">
+      <DependentUpon>DispenserCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HoofdpaginaForm.cs">
       <SubType>Form</SubType>
@@ -216,6 +223,12 @@
     </Compile>
     <Compile Include="Forms\PatientForm.Designer.cs">
       <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PatientInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientInfoForm.Designer.cs">
+      <DependentUpon>PatientInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TemplateForm.cs">
       <SubType>Form</SubType>

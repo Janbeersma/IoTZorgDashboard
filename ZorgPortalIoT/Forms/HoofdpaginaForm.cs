@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using ZorgPortalIoT.Forms;
+using ZorgPortalIoT.Model;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ZorgPortalIoT
 {
@@ -18,6 +20,24 @@ namespace ZorgPortalIoT
             InitializeComponent();
             DesignOpties();
         }
+
+
+        //Haalt de data op voor de sensortype graph
+        public void updateGraphSenType()
+        {
+            using (b2d4ziekenhuisContext senTypeGraphContext = new b2d4ziekenhuisContext())
+            {
+                
+                foreach (SensorType type in senTypeGraphContext.SensorType.ToList())
+                { 
+                    int totaal = senTypeGraphContext.Sensor.Where(sensor => sensor.SensorType == type.TypeId && (bool)sensor.Aan).Count();
+                    Series series = this.sensorTypeChart.Series.Add(type.Naam);
+                    series.Points.Add(totaal);
+                }
+            }
+        }
+
+        
 
         //Geeft de mogelijkhijd om designfunctionaliteiten aan te brengen
         private void DesignOpties()
@@ -120,6 +140,9 @@ namespace ZorgPortalIoT
             instellingenForm.ShowDialog();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateGraphSenType();
+        }
     }
 }
