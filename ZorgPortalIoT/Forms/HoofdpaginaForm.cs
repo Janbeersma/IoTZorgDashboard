@@ -84,7 +84,7 @@ namespace ZorgPortalIoT
             HideSubmenu();
             this.Hide();
             Accountbeheerform Accform = new Accountbeheerform();
-            Accform.ShowDialog();            
+            Accform.Show();            
 
         }
 
@@ -93,7 +93,7 @@ namespace ZorgPortalIoT
             HideSubmenu();
             this.Hide();
             MijnAccountForm mijnAccountForm = new MijnAccountForm();
-            mijnAccountForm.ShowDialog();
+            mijnAccountForm.Show();
         }
 
         private void MedicatieBttn_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace ZorgPortalIoT
             HideSubmenu();
             this.Hide();
             DispBeheerForm dispBehForm = new DispBeheerForm();
-            dispBehForm.ShowDialog();
+            dispBehForm.Show();
 
         }
 
@@ -116,28 +116,28 @@ namespace ZorgPortalIoT
             HideSubmenu();
             this.Hide();
             MedBeheerForm medBehForm = new MedBeheerForm();
-            medBehForm.ShowDialog();
+            medBehForm.Show();
         }
 
         private void AlarmenBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AlarmForm alarmForm = new AlarmForm();
-            alarmForm.ShowDialog();
+            alarmForm.Show();
         }
 
         private void PatientBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             PatientForm patientForm = new PatientForm();
-            patientForm.ShowDialog();
+            patientForm.Show();
         }
 
         private void SettingsBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             InstellingenForm instellingenForm = new InstellingenForm();
-            instellingenForm.ShowDialog();
+            instellingenForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

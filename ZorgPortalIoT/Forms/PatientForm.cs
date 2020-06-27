@@ -30,20 +30,43 @@ namespace ZorgPortalIoT.Forms
             }
         }
 
+        
+
         //Maakt cellen klikbaar en gaat naar de patient info pagina
         private void PatientOverviewGrid_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {                                             
-            //PatientInfoForm patientInfoForm = new PatientInfoForm();
-            //patientInfoForm.ShowDialog();
-            //var senderGrid = (DataGridView)sender;
+        {
 
-            //if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            string waarde = PatientOverviewGrid.Rows[e.RowIndex].Cells[0].Value.ToString();           
+            Convert.ToInt32(waarde);
+            PatientInfoForm patientInfoForm = new PatientInfoForm(waarde);
+            patientInfoForm.Show();
+
+
             //{
-            //    this.Hide();
-            //    PatientInfoForm patientInfoForm = new PatientInfoForm();
-            //    patientInfoForm.ShowDialog();
+            //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
+            //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
+            //patientInfoForm.Show();
             //}
         }
+
+        //if (PatientOverviewGrid.Rows[e.RowIndex].Cells[0].Value)
+        // {
+        //Patient patient = context.Patient.Find(patientId);
+        //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
+        //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
+        //patientInfoForm.Show();
+
+        // }
+
+        //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
+        //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
+        //patientInfoForm.Show();
+        //var senderGrid = (DataGridView)sender;           
+        //if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+
+
+
+
     }
     
 }

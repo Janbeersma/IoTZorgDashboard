@@ -51,7 +51,7 @@ namespace ZorgPortalIoT.Forms
         {
             this.Hide();
             HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
-            hoofdpaginaForm.ShowDialog();
+            hoofdpaginaForm.Show();
 
         }
 
@@ -64,7 +64,7 @@ namespace ZorgPortalIoT.Forms
         {
             this.Hide();
             Accountbeheerform accountbeheerform = new Accountbeheerform();
-            accountbeheerform.ShowDialog();
+            accountbeheerform.Show();
 
         }
 
@@ -72,7 +72,7 @@ namespace ZorgPortalIoT.Forms
         {
             this.Hide();
             MijnAccountForm mijnAccountForm = new MijnAccountForm();
-            mijnAccountForm.ShowDialog();
+            mijnAccountForm.Show();
         }
 
         private void MedicatieBttn_Click(object sender, EventArgs e)
@@ -84,35 +84,35 @@ namespace ZorgPortalIoT.Forms
         {
             this.Hide();
             DispBeheerForm dispBeheerForm = new DispBeheerForm();
-            dispBeheerForm.ShowDialog();
+            dispBeheerForm.Show();
         }
 
         private void MedbeheerBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             MedBeheerForm medBeheerForm = new MedBeheerForm();
-            medBeheerForm.ShowDialog();
+            medBeheerForm.Show();
         }
 
         private void AlarmBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AlarmForm alarmForm = new AlarmForm();
-            alarmForm.ShowDialog();
+            alarmForm.Show();
         }
 
         private void PatientBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             PatientForm patientForm = new PatientForm();
-            patientForm.ShowDialog();
+            patientForm.Show();
         }
 
         private void SettingsBttn_Click(object sender, EventArgs e)
         {
             this.Hide();
             InstellingenForm instellingenForm = new InstellingenForm();
-            instellingenForm.ShowDialog();
+            instellingenForm.Show();
         }
     }
 }
