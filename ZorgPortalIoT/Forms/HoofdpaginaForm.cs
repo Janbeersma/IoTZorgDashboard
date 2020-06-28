@@ -5,144 +5,71 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using ZorgPortalIoT.Forms;
-using ZorgPortalIoT.Model;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ZorgPortalIoT.Model;
 
-namespace ZorgPortalIoT
+namespace ZorgPortalIoT.Forms
 {
-    public partial class HoofdpaginaForm : Form
+    public partial class HoofdpaginaForm : TemplateForm
     {
         public HoofdpaginaForm()
         {
             InitializeComponent();
-            DesignOpties();
+            updateGraphSenType();
         }
 
+        //Verwijder oude punten
+        private void ClearPoints ()
+        {
+            this.sensorTypeChart.Series[0].Points.Clear();
+        }
 
-        //Haalt de data op voor de sensortype graph
+        //Voeg nieuw punt toe
+        private void AddPoint (string x, int y)
+        {
+            this.sensorTypeChart.Series[0].Points.AddXY(x, y);
+        }
+
         public void updateGraphSenType()
         {
+            //Voer functie uit of de UI thread wanneer de functie op een andere thread word uitgevoerd
+            if (InvokeRequired)
+            {
+                this.Invoke((Action)ClearPoints);
+            }
+            else
+            {
+                ClearPoints();
+            }
+
+            //Laad nieuwe punten
             using (b2d4ziekenhuisContext senTypeGraphContext = new b2d4ziekenhuisContext())
             {
-                
                 foreach (SensorType type in senTypeGraphContext.SensorType.ToList())
-                { 
+                {
                     int totaal = senTypeGraphContext.Sensor.Where(sensor => sensor.SensorType == type.TypeId && (bool)sensor.Aan).Count();
-                    Series series = this.sensorTypeChart.Series.Add(type.Naam);
-                    series.Points.Add(totaal);
+
+                    if (InvokeRequired)
+                    {
+                        this.Invoke((Action<string, int>)AddPoint, type.Naam, totaal);
+                    }
+                    else
+                    {
+                        AddPoint(type.Naam, totaal);
+                    }
                 }
             }
         }
 
-        
-
-        //Geeft de mogelijkhijd om designfunctionaliteiten aan te brengen
-        private void DesignOpties()
+        override public void RefreshData()
         {
-            AccountDropdown.Visible = false;
-            MedicatieDropdown.Visible = false;
-        }
-
-        //Zet de standaardwaarden van de submenu's op onzichtbaar
-        private void HideSubmenu()
-        {
-            if (AccountDropdown.Visible == true)
-                AccountDropdown.Visible = false;
-            if (MedicatieDropdown.Visible == true)
-                MedicatieDropdown.Visible = false;
-        }
-
-        //Wordt gekoppld aan het onclick event om de dropdowns te laten zien
-        private void ShowSubmenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
+            //Check of de Form al is geladen, zo niet doe niks
+            if (this.IsHandleCreated)
             {
-                HideSubmenu();
-                subMenu.Visible = true;
+                updateGraphSenType();
             }
-            else
-                subMenu.Visible = false;
-        }
-
-        private void HoofdpaginaButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HoofdpaginaForm Hoofdform = new HoofdpaginaForm();
-            Hoofdform.Show();
-        }
-
-        private void AccountBttn_Click(object sender, EventArgs e)
-        {
-            ShowSubmenu(AccountDropdown);
-        }
-
-        private void AccountbeheerBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            Accountbeheerform Accform = new Accountbeheerform();
-            Accform.Show();            
-
-        }
-
-        private void MijnAccountBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            MijnAccountForm mijnAccountForm = new MijnAccountForm();
-            mijnAccountForm.Show();
-        }
-
-        private void MedicatieBttn_Click(object sender, EventArgs e)
-        {
-            ShowSubmenu(MedicatieDropdown);
-            
-        }
-
-        private void DispenserBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            DispBeheerForm dispBehForm = new DispBeheerForm();
-            dispBehForm.Show();
-
-        }
-
-        private void MedbeheerBttn_Click(object sender, EventArgs e)
-        {
-            HideSubmenu();
-            this.Hide();
-            MedBeheerForm medBehForm = new MedBeheerForm();
-            medBehForm.Show();
-        }
-
-        private void AlarmenBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AlarmForm alarmForm = new AlarmForm();
-            alarmForm.Show();
-        }
-
-        private void PatientBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            PatientForm patientForm = new PatientForm();
-            patientForm.Show();
-        }
-
-        private void SettingsBttn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            InstellingenForm instellingenForm = new InstellingenForm();
-            instellingenForm.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            updateGraphSenType();
         }
     }
 }

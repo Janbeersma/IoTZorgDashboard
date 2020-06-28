@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZorgPortalIoT.Model;
 using ZorgPortalIoT.Forms;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZorgPortalIoT.Forms
 {
@@ -21,51 +21,45 @@ namespace ZorgPortalIoT.Forms
             HaalPatientData();
         }
 
-        //Haalt patientdata op en zit deze in een datagridview
+        //Haalt patientdata op uit de database en zet deze in de tabel.
         public void HaalPatientData()
         {
+            List<Patient> patienten;
             using (b2d4ziekenhuisContext patientData = new b2d4ziekenhuisContext())
             {
-                patientData.Patient.Load(); PatientOverviewGrid.DataSource = patientData.Patient.Local.ToBindingList();
+                patienten = patientData.Patient.ToList();
+            }
+
+            if (InvokeRequired)
+            {
+                this.Invoke((Action<List<Patient>>)UpdateTabelData, patienten);
+            }
+            else
+            {
+                UpdateTabelData(patienten);
             }
         }
 
-        
+        //Zet een nieuwe lijst patienten als de datasource van de tabel
+        private void UpdateTabelData(List<Patient> patienten)
+        {
+            PatientOverviewGrid.DataSource = patienten;
+        }
 
         //Maakt cellen klikbaar en gaat naar de patient info pagina
         private void PatientOverviewGrid_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
-            string waarde = PatientOverviewGrid.Rows[e.RowIndex].Cells[0].Value.ToString();           
-            Convert.ToInt32(waarde);
-            PatientInfoForm patientInfoForm = new PatientInfoForm(waarde);
-            patientInfoForm.Show();
-
-
-            //{
-            //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
-            //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
-            //patientInfoForm.Show();
-            //}
+            int id = Convert.ToInt32(PatientOverviewGrid.Rows[e.RowIndex].Cells[0].Value);
+            Program.SwitchForm(new PatientInfoForm(id));
         }
 
-        //if (PatientOverviewGrid.Rows[e.RowIndex].Cells[0].Value)
-        // {
-        //Patient patient = context.Patient.Find(patientId);
-        //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
-        //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
-        //patientInfoForm.Show();
-
-        // }
-
-        //patient = PatientOverviewGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
-        //PatientInfoForm patientInfoForm = new PatientInfoForm(patient);
-        //patientInfoForm.Show();
-        //var senderGrid = (DataGridView)sender;           
-        //if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
-
-
-
+        override public void RefreshData()
+        {
+            if (this.IsHandleCreated)
+            {
+                HaalPatientData();
+            }
+        }
 
     }
     

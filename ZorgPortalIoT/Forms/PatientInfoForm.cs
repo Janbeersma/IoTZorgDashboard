@@ -14,44 +14,32 @@ namespace ZorgPortalIoT.Forms
 {
     public partial class PatientInfoForm : TemplateForm
     {
-        string mijnPatient;
-        Label patientLabel;
+        private int PatientId { get; set; }
 
-        public PatientInfoForm(string _mijnPatient)
+        public PatientInfoForm(int patientId)
         {
             InitializeComponent();
-            mijnPatient = _mijnPatient;
-            //CreatingLabel();
+            PatientId = patientId;
+            GetPatientInfo();
         }
 
         //Method om data uit patient te halen verdere logica volgt nog
-        public void PatientInfoDisplay()
+        public void GetPatientInfo()
         {
-            using (b2d4ziekenhuisContext patientOverzicht = new b2d4ziekenhuisContext())
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
             {
-                List<string> dataOpslag = new List<string>();
+                Patient patient = context.Patient.Find(PatientId);
+                VoornaamLabel.Text = patient.Voornaam;
+                AchternaamLabel.Text = patient.Achternaam;
+                LeeftijdLabel.Text = patient.Leeftijd.ToString();
 
-                foreach (Patient data in patientOverzicht.Patient.ToList())
-                {                  
-                    Convert.ToString(data);
-                    
-                    
-                }
-                VoornaamLabel.Controls.Add(data);
+                fotoBox.ImageLocation = patient.FotoUrl;
             }
-           
         }
 
-        //private void CreatingLabel()
-        //{          
-        //    patientLabel = new Label();
-        //    patientLabel.Location = new Point(40, 40);
-        //    patientLabel.Text = mijnPatient;
-        //    ContentPanel.Controls.Add(patientLabel);
-        //    patientLabel.Refresh();
-            
-        //}
-
-
+        override public void RefreshData()
+        {
+            //Refresh code hier
+        }
     }
 }
