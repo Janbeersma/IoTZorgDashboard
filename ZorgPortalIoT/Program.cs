@@ -31,6 +31,11 @@ namespace ZorgPortalIoT
         public static void SwitchForm(Form newForm)
         {
             var oldForm = AppContext.MainForm;
+
+            //Open new form in same location as old form
+            newForm.StartPosition = FormStartPosition.Manual;
+            newForm.Location = oldForm.Location;
+
             AppContext.MainForm = newForm;
 
             //Stop realtimeClock if Form is of type TemplateForm
