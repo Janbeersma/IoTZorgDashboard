@@ -23,6 +23,17 @@ namespace ZorgPortalIoT.Forms
             GetPatientInfo();
         }
 
+        private void ClearPoints()
+        {
+            this.stepsChart.Series[0].Points.Clear();
+        }
+
+        //Voeg nieuw punt toe
+        private void AddPoint(string x, int y)
+        {
+            this.stepsChart.Series[0].Points.AddXY(x, y);
+        }
+
         //Method om data uit patient te halen verdere logica volgt nog
         public void GetPatientInfo()
         {
@@ -42,6 +53,32 @@ namespace ZorgPortalIoT.Forms
                 }
                 //Voeg één lege rij toe, zodat de knoppen niet verspringen
                 this.toggleTableLayoutPanel.RowCount++;
+            }
+        }
+
+        //Laad de data voor de stappenteller van een patiënt
+        public void LoadPatientStepData() 
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke((Action)ClearPoints);
+            }
+            else
+            {
+                ClearPoints();
+            }
+
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                Sensor sensor = context.Sensor.First(s => s.PatientId == PatientId && s.SensorType == 1);
+                foreach (SensorMeting meting in context.SensorMeting.Where(meting => meting.SensorId == sensor.SensorId))
+                {
+                    meting.ToString();
+
+
+
+                }
+
             }
         }
 
