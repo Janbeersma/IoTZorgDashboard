@@ -14,44 +14,89 @@ namespace ZorgPortalIoT.Forms
 {
     public partial class PatientInfoForm : TemplateForm
     {
-        string mijnPatient;
-        Label patientLabel;
+        private int PatientId { get; set; }
 
-        public PatientInfoForm(string _mijnPatient)
+        public PatientInfoForm(int patientId)
         {
             InitializeComponent();
-            mijnPatient = _mijnPatient;
-            //CreatingLabel();
+            PatientId = patientId;
+            GetPatientInfo();
         }
 
         //Method om data uit patient te halen verdere logica volgt nog
-        public void PatientInfoDisplay()
+        public void GetPatientInfo()
         {
-            using (b2d4ziekenhuisContext patientOverzicht = new b2d4ziekenhuisContext())
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
             {
-                List<string> dataOpslag = new List<string>();
+                //Haal patient op en vul de labels in
+                Patient patient = context.Patient.Find(PatientId);
+                VoornaamLabel.Text = $"Voornaam: {patient.Voornaam}";
+                AchternaamLabel.Text = $"Achternaam: {patient.Achternaam}";
+                LeeftijdLabel.Text = $"Leeftijd: {patient.Leeftijd.ToString()}";
+                fotoBox.ImageLocation = patient.FotoUrl;
 
-                foreach (Patient data in patientOverzicht.Patient.ToList())
-                {                  
-                    Convert.ToString(data);
-                    
-                    
+                //Maak knop voor elke sensor die de patient heeft
+                foreach (Sensor sensor in context.Sensor.Where(s => s.PatientId == PatientId).ToList())
+                {
+                    AddToggleButton(sensor.SensorId, (bool)sensor.Aan, string.IsNullOrEmpty(sensor.Naam) ? context.SensorType.First(type => type.TypeId == sensor.SensorType).Naam : sensor.Naam);
                 }
-                VoornaamLabel.Controls.Add(data);
+                //Voeg één lege rij toe, zodat de knoppen niet verspringen
+                this.toggleTableLayoutPanel.RowCount++;
             }
-           
         }
 
-        //private void CreatingLabel()
-        //{          
-        //    patientLabel = new Label();
-        //    patientLabel.Location = new Point(40, 40);
-        //    patientLabel.Text = mijnPatient;
-        //    ContentPanel.Controls.Add(patientLabel);
-        //    patientLabel.Refresh();
-            
-        //}
+        //Voegt een aan/uit knop toe aan de tabel
+        private void AddToggleButton(int id, bool aan, string naam)
+        {
+            //De toggle knop
+            Button toggleButton = new Button()
+            {
+                Text = aan ? "Zet uit" : "Zet aan",
+                Name = id.ToString(),
+                Anchor = AnchorStyles.None
+            };
+            //Koppel button aan de SensorToggle_Click functie
+            toggleButton.Click += new EventHandler(SensorToggle_Click);
+            //Label dat de naam displayed
+            Label naamLabel = new Label()
+            {
+                Text = naam,
+                Anchor = AnchorStyles.None
+            };
 
+            int targetrow = this.toggleTableLayoutPanel.RowCount;
+            //Voeg controls toe, en voeg rij toe
+            this.toggleTableLayoutPanel.Controls.Add(naamLabel, 0, targetrow);
+            this.toggleTableLayoutPanel.Controls.Add(toggleButton, 1, targetrow);
+            this.toggleTableLayoutPanel.RowCount++;
+        }
 
+        private void SensorToggle_Click(object sender, EventArgs e)
+        {
+            Button toggleButton = (Button)sender;
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                Sensor sensor = context.Sensor.Find(Convert.ToInt32(toggleButton.Name));
+                if (sensor != null)
+                {
+                    if ((bool)sensor.Aan)
+                    {
+                        sensor.Aan = false;
+                        toggleButton.Text = "Zet aan";
+                    }
+                    else
+                    {
+                        sensor.Aan = true;
+                        toggleButton.Text = "Zet uit";
+                    }
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        override public void RefreshData()
+        {
+            //Refresh code hier
+        }
     }
 }

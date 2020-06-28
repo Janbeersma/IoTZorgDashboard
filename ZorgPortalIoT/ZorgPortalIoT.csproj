@@ -230,6 +230,9 @@
     <Compile Include="Forms\PatientInfoForm.Designer.cs">
       <DependentUpon>PatientInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Realtime\RealtimeClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\TemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>

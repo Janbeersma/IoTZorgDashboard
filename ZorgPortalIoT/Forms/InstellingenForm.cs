@@ -17,5 +17,10 @@ namespace ZorgPortalIoT.Forms
             InitializeComponent();
         }
 
+        override public void RefreshData()
+        {
+            //Refresh code hier
+        }
+
     }
 }

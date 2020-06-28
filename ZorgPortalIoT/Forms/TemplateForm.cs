@@ -17,6 +17,7 @@ namespace ZorgPortalIoT.Forms
         {
             InitializeComponent();
             DesignOpties();
+            StartRefresh();
         }
         
         //Geeft de mogelijkhijd om designfunctionaliteiten aan te brengen
@@ -49,10 +50,7 @@ namespace ZorgPortalIoT.Forms
 
         private void HoofdpaginaBttn_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            HoofdpaginaForm hoofdpaginaForm = new HoofdpaginaForm();
-            hoofdpaginaForm.Show();
-
+            Program.SwitchForm(new HoofdpaginaForm());
         }
 
         private void AccountBttn_Click(object sender, EventArgs e)
@@ -62,17 +60,12 @@ namespace ZorgPortalIoT.Forms
 
         private void AccountbeheerBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Accountbeheerform accountbeheerform = new Accountbeheerform();
-            accountbeheerform.Show();
-
+            Program.SwitchForm(new Accountbeheerform());
         }
 
         private void MijnAccountBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MijnAccountForm mijnAccountForm = new MijnAccountForm();
-            mijnAccountForm.Show();
+            Program.SwitchForm(new MijnAccountForm());
         }
 
         private void MedicatieBttn_Click(object sender, EventArgs e)
@@ -82,37 +75,27 @@ namespace ZorgPortalIoT.Forms
 
         private void DispBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DispBeheerForm dispBeheerForm = new DispBeheerForm();
-            dispBeheerForm.Show();
+            Program.SwitchForm(new DispBeheerForm());
         }
 
         private void MedbeheerBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MedBeheerForm medBeheerForm = new MedBeheerForm();
-            medBeheerForm.Show();
+            Program.SwitchForm(new MedBeheerForm());
         }
 
         private void AlarmBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AlarmForm alarmForm = new AlarmForm();
-            alarmForm.Show();
+            Program.SwitchForm(new AlarmForm());
         }
 
         private void PatientBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PatientForm patientForm = new PatientForm();
-            patientForm.Show();
+            Program.SwitchForm(new PatientForm());
         }
 
         private void SettingsBttn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            InstellingenForm instellingenForm = new InstellingenForm();
-            instellingenForm.Show();
+            Program.SwitchForm(new InstellingenForm());
         }
     }
 }
