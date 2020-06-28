@@ -28,12 +28,69 @@ namespace ZorgPortalIoT.Forms
         {
             using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
             {
+                //Haal patient op en vul de labels in
                 Patient patient = context.Patient.Find(PatientId);
-                VoornaamLabel.Text = patient.Voornaam;
-                AchternaamLabel.Text = patient.Achternaam;
-                LeeftijdLabel.Text = patient.Leeftijd.ToString();
-
+                VoornaamLabel.Text = $"Voornaam: {patient.Voornaam}";
+                AchternaamLabel.Text = $"Achternaam: {patient.Achternaam}";
+                LeeftijdLabel.Text = $"Leeftijd: {patient.Leeftijd.ToString()}";
                 fotoBox.ImageLocation = patient.FotoUrl;
+
+                //Maak knop voor elke sensor die de patient heeft
+                foreach (Sensor sensor in context.Sensor.Where(s => s.PatientId == PatientId).ToList())
+                {
+                    AddToggleButton(sensor.SensorId, (bool)sensor.Aan, string.IsNullOrEmpty(sensor.Naam) ? context.SensorType.First(type => type.TypeId == sensor.SensorType).Naam : sensor.Naam);
+                }
+                //Voeg één lege rij toe, zodat de knoppen niet verspringen
+                this.toggleTableLayoutPanel.RowCount++;
+            }
+        }
+
+        //Voegt een aan/uit knop toe aan de tabel
+        private void AddToggleButton(int id, bool aan, string naam)
+        {
+            //De toggle knop
+            Button toggleButton = new Button()
+            {
+                Text = aan ? "Zet uit" : "Zet aan",
+                Name = id.ToString(),
+                Anchor = AnchorStyles.None
+            };
+            //Koppel button aan de SensorToggle_Click functie
+            toggleButton.Click += new EventHandler(SensorToggle_Click);
+            //Label dat de naam displayed
+            Label naamLabel = new Label()
+            {
+                Text = naam,
+                Anchor = AnchorStyles.None
+            };
+
+            int targetrow = this.toggleTableLayoutPanel.RowCount;
+            //Voeg controls toe, en voeg rij toe
+            this.toggleTableLayoutPanel.Controls.Add(naamLabel, 0, targetrow);
+            this.toggleTableLayoutPanel.Controls.Add(toggleButton, 1, targetrow);
+            this.toggleTableLayoutPanel.RowCount++;
+        }
+
+        private void SensorToggle_Click(object sender, EventArgs e)
+        {
+            Button toggleButton = (Button)sender;
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                Sensor sensor = context.Sensor.Find(Convert.ToInt32(toggleButton.Name));
+                if (sensor != null)
+                {
+                    if ((bool)sensor.Aan)
+                    {
+                        sensor.Aan = false;
+                        toggleButton.Text = "Zet aan";
+                    }
+                    else
+                    {
+                        sensor.Aan = true;
+                        toggleButton.Text = "Zet uit";
+                    }
+                    context.SaveChanges();
+                }
             }
         }
 
