@@ -21,6 +21,8 @@ namespace ZorgPortalIoT.Forms
             InitializeComponent();
             PatientId = patientId;
             GetPatientInfo();
+            GenerateGraph();
+            GetReadings();
         }
 
         //Method om data uit patient te halen verdere logica volgt nog
@@ -35,6 +37,8 @@ namespace ZorgPortalIoT.Forms
                 LeeftijdLabel.Text = $"Leeftijd: {patient.Leeftijd.ToString()}";
                 fotoBox.ImageLocation = patient.FotoUrl;
 
+                
+
                 //Maak knop voor elke sensor die de patient heeft
                 foreach (Sensor sensor in context.Sensor.Where(s => s.PatientId == PatientId).ToList())
                 {
@@ -43,6 +47,47 @@ namespace ZorgPortalIoT.Forms
                 //Voeg één lege rij toe, zodat de knoppen niet verspringen
                 this.toggleTableLayoutPanel.RowCount++;
             }
+        }
+
+        //Haalt de meest recente sensorwaardes op
+        private void GetReadings()
+        {
+            string hartslag = null;
+            string temperatuur = null;
+
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                Patient patient = context.Patient.Find(PatientId);
+                //Haal meest recente hartslag en temperatuur op
+                int? hartslagMeterId = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 2)?.SensorId;
+                int? temeratuurmeterId = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 3)?.SensorId;
+                
+                if (hartslagMeterId != null)
+                {
+                    hartslag = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == hartslagMeterId).MetingWaarde.ToString("0.0");
+                }
+                if (temeratuurmeterId != null)
+                {
+                    temperatuur = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == temeratuurmeterId).MetingWaarde.ToString("0.0");
+                }
+            }
+
+            if (InvokeRequired)
+            {
+                this.Invoke((Action<string, string>)SetReadings, hartslag, temperatuur);
+            }
+            else
+            {
+                SetReadings(hartslag, temperatuur);
+            }
+                
+        }
+
+        //Zet de waardes voor hartslagmeter en temperatuutmeter
+        private void SetReadings(string hartslag, string temperatuur)
+        {
+            hartslagLabel.Text = $"{hartslag} BPM";
+            temperatuurLabel.Text = $"{temperatuur} °C";
         }
 
         //Voegt een aan/uit knop toe aan de tabel
@@ -94,9 +139,62 @@ namespace ZorgPortalIoT.Forms
             }
         }
 
+        private void GenerateGraph()
+        {
+            //Verwijder oude punten
+            if (InvokeRequired)
+            {
+                this.Invoke((Action)delegate
+                {
+                    stappentellerChart.Series[0].Points.Clear();
+                });
+            }
+            else
+            {
+                stappentellerChart.Series[0].Points.Clear();
+            }
+
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                Sensor stappenteller = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 1);
+                if (stappenteller == null) { return; }
+                //Bereken het aantal gelopen meter per dag van de afgelopen 7 dagen
+                var dagen = from meting in context.SensorMeting
+                            where meting.MetingTimestamp > DateTime.Now.AddDays(-7) && meting.SensorId == stappenteller.SensorId
+                            let dateTime = ((DateTime)meting.MetingTimestamp).Date
+                            group meting by dateTime into groep
+                            select new
+                            {
+                                dag = groep.Key,
+                                gemiddelde = groep.Sum(m => m.MetingWaarde)
+                            };
+
+                foreach (var dag in dagen)
+                {
+                    if (InvokeRequired)
+                    {
+                        this.Invoke((Action) delegate 
+                        {
+                            stappentellerChart.Series[0].Points.AddXY(dag.dag.ToShortDateString(), dag.gemiddelde);
+                        });
+                    }
+                    else
+                    {
+                        stappentellerChart.Series[0].Points.AddXY(dag.dag.ToShortDateString(), dag.gemiddelde);
+                    }
+                    
+                }
+            }
+        }
+
         override public void RefreshData()
         {
             //Refresh code hier
+            if (this.IsHandleCreated)
+            {
+                GenerateGraph();
+                GetReadings();
+            }
         }
     }
 }
