@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ZorgPortalIoT.Model;
+using ZorgPortalIoT.Forms.Realtime;
 
 namespace ZorgPortalIoT.Forms
 {
     public partial class TemplateForm
     {
+        public DateTime startTime = DateTime.Now;
+
         private CancellationTokenSource StopSource { get; set; }
 
         /// <summary>
@@ -36,6 +41,7 @@ namespace ZorgPortalIoT.Forms
             {
                 //Run refresh function
                 await Task.Run(RefreshData);
+                await Task.Run(AlarmAlert);
 
                 Console.WriteLine($"Refresh activated on object: {this.ToString()}");
 
@@ -94,7 +100,40 @@ namespace ZorgPortalIoT.Forms
         /// </summary>
         virtual public void RefreshData() 
         {
+            //Refresh code hier
+        }
+
+        /// <summary>
+        /// Function that notifies of new alarms
+        /// </summary>
+        virtual public void AlarmAlert()
+        {
             
+            using (b2d4ziekenhuisContext context = new b2d4ziekenhuisContext())
+            {
+                List<SensorMeting> alarmen = context.SensorMeting.Where(meting => meting.Alarm == true && meting.MetingTimestamp >= startTime).ToList();
+                
+                foreach (SensorMeting alarm in alarmen) 
+                {
+                    Sensor sensor = context.Sensor.Find(alarm.SensorId);
+                    Patient patient = context.Patient.Find(sensor.PatientId);
+                    string sensornaam = string.IsNullOrEmpty(sensor.Naam) ? context.SensorType.Find(sensor.SensorType).Naam : sensor.Naam;
+                    string patientNaam = $"{patient.Voornaam} {patient.Achternaam}";
+                    AlertPopup($"{sensornaam} {patientNaam}");
+                }
+            }
+
+            this.startTime = DateTime.Now;
+        }
+
+        private void AlertPopup (string message)
+        {
+            this.Invoke((Action)delegate {
+                AlertForm popup = new AlertForm();
+                popup.showAlert(message);
+            });
+            
+            Console.WriteLine("Attempting popup");
         }
     }
 }

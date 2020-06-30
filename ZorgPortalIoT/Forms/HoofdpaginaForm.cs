@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ZorgPortalIoT.Forms.Realtime;
 using ZorgPortalIoT.Model;
 
 namespace ZorgPortalIoT.Forms
@@ -18,6 +19,10 @@ namespace ZorgPortalIoT.Forms
         {
             InitializeComponent();
             updateGraphSenType();
+
+            AlertForm popup = new AlertForm();
+            popup.showAlert("Test!");
+
         }
 
         //Verwijder oude punten

@@ -19,6 +19,7 @@ namespace ZorgPortalIoT.Forms
         {
             InitializeComponent(); 
             HaalPatientData();
+            label1.Hide();
         }
 
         //Haalt patientdata op uit de database en zet deze in de tabel.
