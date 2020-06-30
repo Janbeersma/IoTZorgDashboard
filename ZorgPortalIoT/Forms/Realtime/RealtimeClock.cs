@@ -132,8 +132,6 @@ namespace ZorgPortalIoT.Forms
                 AlertForm popup = new AlertForm();
                 popup.showAlert(message);
             });
-            
-            Console.WriteLine("Attempting popup");
         }
     }
 }

@@ -17,7 +17,6 @@ namespace ZorgPortalIoT.Forms
         {
             InitializeComponent();
             DesignOpties();
-            StartRefresh();
         }
         
         //Geeft de mogelijkhijd om designfunctionaliteiten aan te brengen
@@ -96,6 +95,14 @@ namespace ZorgPortalIoT.Forms
         private void SettingsBttn_Click(object sender, EventArgs e)
         {
             Program.SwitchForm(new InstellingenForm());
+        }
+
+        private void TemplateForm_Load(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                StartRefresh();
+            }
         }
     }
 }

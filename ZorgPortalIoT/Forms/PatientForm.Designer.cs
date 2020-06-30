@@ -44,7 +44,7 @@
             this.PatientOverzichtPaneel.Controls.Add(this.PatientOverviewGrid);
             this.PatientOverzichtPaneel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PatientOverzichtPaneel.Location = new System.Drawing.Point(164, 0);
-            this.PatientOverzichtPaneel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PatientOverzichtPaneel.Margin = new System.Windows.Forms.Padding(2);
             this.PatientOverzichtPaneel.Name = "PatientOverzichtPaneel";
             this.PatientOverzichtPaneel.Size = new System.Drawing.Size(665, 428);
             this.PatientOverzichtPaneel.TabIndex = 2;
@@ -52,12 +52,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 11);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(129, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Patiënten";
             // 
             // PatientOverviewGrid
             // 
@@ -65,13 +66,13 @@
             this.PatientOverviewGrid.AllowUserToDeleteRows = false;
             this.PatientOverviewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PatientOverviewGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PatientOverviewGrid.Location = new System.Drawing.Point(0, 260);
-            this.PatientOverviewGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PatientOverviewGrid.Location = new System.Drawing.Point(0, 42);
+            this.PatientOverviewGrid.Margin = new System.Windows.Forms.Padding(2);
             this.PatientOverviewGrid.Name = "PatientOverviewGrid";
             this.PatientOverviewGrid.ReadOnly = true;
             this.PatientOverviewGrid.RowHeadersWidth = 51;
             this.PatientOverviewGrid.RowTemplate.Height = 24;
-            this.PatientOverviewGrid.Size = new System.Drawing.Size(665, 168);
+            this.PatientOverviewGrid.Size = new System.Drawing.Size(665, 386);
             this.PatientOverviewGrid.TabIndex = 0;
             this.PatientOverviewGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientOverviewGrid_CellDoubleClick_1);
             // 

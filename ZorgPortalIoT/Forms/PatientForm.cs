@@ -19,7 +19,6 @@ namespace ZorgPortalIoT.Forms
         {
             InitializeComponent(); 
             HaalPatientData();
-            label1.Hide();
         }
 
         //Haalt patientdata op uit de database en zet deze in de tabel.
@@ -45,6 +44,8 @@ namespace ZorgPortalIoT.Forms
         private void UpdateTabelData(List<Patient> patienten)
         {
             PatientOverviewGrid.DataSource = patienten;
+            PatientOverviewGrid.Columns["Sensor"].Visible = false;
+            PatientOverviewGrid.Columns["FotoUrl"].Visible = false;
         }
 
         //Maakt cellen klikbaar en gaat naar de patient info pagina

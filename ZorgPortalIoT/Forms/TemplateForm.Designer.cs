@@ -66,8 +66,9 @@
             this.Zijpaneel.Controls.Add(this.LogoPaneel);
             this.Zijpaneel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Zijpaneel.Location = new System.Drawing.Point(0, 0);
+            this.Zijpaneel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Zijpaneel.Name = "Zijpaneel";
-            this.Zijpaneel.Size = new System.Drawing.Size(219, 697);
+            this.Zijpaneel.Size = new System.Drawing.Size(164, 566);
             this.Zijpaneel.TabIndex = 1;
             // 
             // SettingsBttn
@@ -77,9 +78,10 @@
             this.SettingsBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.SettingsBttn.Location = new System.Drawing.Point(0, 475);
+            this.SettingsBttn.Location = new System.Drawing.Point(0, 388);
+            this.SettingsBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SettingsBttn.Name = "SettingsBttn";
-            this.SettingsBttn.Size = new System.Drawing.Size(219, 45);
+            this.SettingsBttn.Size = new System.Drawing.Size(164, 37);
             this.SettingsBttn.TabIndex = 9;
             this.SettingsBttn.Text = "Instellingen";
             this.SettingsBttn.UseVisualStyleBackColor = true;
@@ -92,9 +94,10 @@
             this.PatientBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PatientBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PatientBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.PatientBttn.Location = new System.Drawing.Point(0, 430);
+            this.PatientBttn.Location = new System.Drawing.Point(0, 351);
+            this.PatientBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PatientBttn.Name = "PatientBttn";
-            this.PatientBttn.Size = new System.Drawing.Size(219, 45);
+            this.PatientBttn.Size = new System.Drawing.Size(164, 37);
             this.PatientBttn.TabIndex = 8;
             this.PatientBttn.Text = "Patiënten";
             this.PatientBttn.UseVisualStyleBackColor = true;
@@ -107,9 +110,10 @@
             this.AlarmBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AlarmBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlarmBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.AlarmBttn.Location = new System.Drawing.Point(0, 385);
+            this.AlarmBttn.Location = new System.Drawing.Point(0, 314);
+            this.AlarmBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AlarmBttn.Name = "AlarmBttn";
-            this.AlarmBttn.Size = new System.Drawing.Size(219, 45);
+            this.AlarmBttn.Size = new System.Drawing.Size(164, 37);
             this.AlarmBttn.TabIndex = 7;
             this.AlarmBttn.Text = "Alarmen";
             this.AlarmBttn.UseVisualStyleBackColor = true;
@@ -122,9 +126,10 @@
             this.MedicatieDropdown.Controls.Add(this.DispBttn);
             this.MedicatieDropdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.MedicatieDropdown.ForeColor = System.Drawing.Color.White;
-            this.MedicatieDropdown.Location = new System.Drawing.Point(0, 310);
+            this.MedicatieDropdown.Location = new System.Drawing.Point(0, 253);
+            this.MedicatieDropdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MedicatieDropdown.Name = "MedicatieDropdown";
-            this.MedicatieDropdown.Size = new System.Drawing.Size(219, 75);
+            this.MedicatieDropdown.Size = new System.Drawing.Size(164, 61);
             this.MedicatieDropdown.TabIndex = 6;
             // 
             // MedbeheerBttn
@@ -134,9 +139,10 @@
             this.MedbeheerBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MedbeheerBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MedbeheerBttn.ForeColor = System.Drawing.Color.Black;
-            this.MedbeheerBttn.Location = new System.Drawing.Point(0, 35);
+            this.MedbeheerBttn.Location = new System.Drawing.Point(0, 28);
+            this.MedbeheerBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MedbeheerBttn.Name = "MedbeheerBttn";
-            this.MedbeheerBttn.Size = new System.Drawing.Size(219, 35);
+            this.MedbeheerBttn.Size = new System.Drawing.Size(164, 28);
             this.MedbeheerBttn.TabIndex = 3;
             this.MedbeheerBttn.Text = "Medicatie beheer";
             this.MedbeheerBttn.UseVisualStyleBackColor = true;
@@ -150,8 +156,9 @@
             this.DispBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DispBttn.ForeColor = System.Drawing.Color.Black;
             this.DispBttn.Location = new System.Drawing.Point(0, 0);
+            this.DispBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DispBttn.Name = "DispBttn";
-            this.DispBttn.Size = new System.Drawing.Size(219, 35);
+            this.DispBttn.Size = new System.Drawing.Size(164, 28);
             this.DispBttn.TabIndex = 2;
             this.DispBttn.Text = "Dispenser";
             this.DispBttn.UseVisualStyleBackColor = true;
@@ -164,9 +171,10 @@
             this.MedicatieBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MedicatieBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MedicatieBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.MedicatieBttn.Location = new System.Drawing.Point(0, 265);
+            this.MedicatieBttn.Location = new System.Drawing.Point(0, 216);
+            this.MedicatieBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MedicatieBttn.Name = "MedicatieBttn";
-            this.MedicatieBttn.Size = new System.Drawing.Size(219, 45);
+            this.MedicatieBttn.Size = new System.Drawing.Size(164, 37);
             this.MedicatieBttn.TabIndex = 5;
             this.MedicatieBttn.Text = "Medicatie";
             this.MedicatieBttn.UseVisualStyleBackColor = true;
@@ -178,9 +186,10 @@
             this.AccountDropdown.Controls.Add(this.MijnAccountBttn);
             this.AccountDropdown.Controls.Add(this.AccountbeheerBttn);
             this.AccountDropdown.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AccountDropdown.Location = new System.Drawing.Point(0, 190);
+            this.AccountDropdown.Location = new System.Drawing.Point(0, 155);
+            this.AccountDropdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AccountDropdown.Name = "AccountDropdown";
-            this.AccountDropdown.Size = new System.Drawing.Size(219, 75);
+            this.AccountDropdown.Size = new System.Drawing.Size(164, 61);
             this.AccountDropdown.TabIndex = 4;
             // 
             // MijnAccountBttn
@@ -189,9 +198,10 @@
             this.MijnAccountBttn.FlatAppearance.BorderSize = 0;
             this.MijnAccountBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MijnAccountBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MijnAccountBttn.Location = new System.Drawing.Point(0, 35);
+            this.MijnAccountBttn.Location = new System.Drawing.Point(0, 28);
+            this.MijnAccountBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MijnAccountBttn.Name = "MijnAccountBttn";
-            this.MijnAccountBttn.Size = new System.Drawing.Size(219, 35);
+            this.MijnAccountBttn.Size = new System.Drawing.Size(164, 28);
             this.MijnAccountBttn.TabIndex = 1;
             this.MijnAccountBttn.Text = "Mijn Account";
             this.MijnAccountBttn.UseVisualStyleBackColor = true;
@@ -204,8 +214,9 @@
             this.AccountbeheerBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AccountbeheerBttn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountbeheerBttn.Location = new System.Drawing.Point(0, 0);
+            this.AccountbeheerBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AccountbeheerBttn.Name = "AccountbeheerBttn";
-            this.AccountbeheerBttn.Size = new System.Drawing.Size(219, 35);
+            this.AccountbeheerBttn.Size = new System.Drawing.Size(164, 28);
             this.AccountbeheerBttn.TabIndex = 0;
             this.AccountbeheerBttn.Text = "Accountbeheer";
             this.AccountbeheerBttn.UseVisualStyleBackColor = true;
@@ -218,9 +229,10 @@
             this.AccountBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AccountBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.AccountBttn.Location = new System.Drawing.Point(0, 145);
+            this.AccountBttn.Location = new System.Drawing.Point(0, 118);
+            this.AccountBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AccountBttn.Name = "AccountBttn";
-            this.AccountBttn.Size = new System.Drawing.Size(219, 45);
+            this.AccountBttn.Size = new System.Drawing.Size(164, 37);
             this.AccountBttn.TabIndex = 3;
             this.AccountBttn.Text = "Account";
             this.AccountBttn.UseVisualStyleBackColor = true;
@@ -233,9 +245,10 @@
             this.HoofdpaginaBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HoofdpaginaBttn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoofdpaginaBttn.ForeColor = System.Drawing.Color.DarkGray;
-            this.HoofdpaginaBttn.Location = new System.Drawing.Point(0, 100);
+            this.HoofdpaginaBttn.Location = new System.Drawing.Point(0, 81);
+            this.HoofdpaginaBttn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HoofdpaginaBttn.Name = "HoofdpaginaBttn";
-            this.HoofdpaginaBttn.Size = new System.Drawing.Size(219, 45);
+            this.HoofdpaginaBttn.Size = new System.Drawing.Size(164, 37);
             this.HoofdpaginaBttn.TabIndex = 2;
             this.HoofdpaginaBttn.Text = "Hoofdpagina";
             this.HoofdpaginaBttn.UseVisualStyleBackColor = true;
@@ -246,8 +259,9 @@
             this.LogoPaneel.Controls.Add(this.Logo);
             this.LogoPaneel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPaneel.Location = new System.Drawing.Point(0, 0);
+            this.LogoPaneel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LogoPaneel.Name = "LogoPaneel";
-            this.LogoPaneel.Size = new System.Drawing.Size(219, 100);
+            this.LogoPaneel.Size = new System.Drawing.Size(164, 81);
             this.LogoPaneel.TabIndex = 0;
             // 
             // Logo
@@ -255,20 +269,23 @@
             this.Logo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(0, 0);
+            this.Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(219, 100);
+            this.Logo.Size = new System.Drawing.Size(164, 81);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             // 
             // TemplateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 697);
+            this.ClientSize = new System.Drawing.Size(724, 566);
             this.Controls.Add(this.Zijpaneel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TemplateForm";
             this.Text = "TemplateForm";
+            this.Load += new System.EventHandler(this.TemplateForm_Load);
             this.Zijpaneel.ResumeLayout(false);
             this.MedicatieDropdown.ResumeLayout(false);
             this.AccountDropdown.ResumeLayout(false);

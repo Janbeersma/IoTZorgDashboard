@@ -18,7 +18,7 @@ namespace ZorgPortalIoT
         [STAThread]
         static void Main()
         {
-            //AddPatient("Ruurd", "Meeuwen", 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQXUAGyOoDuUKvii5Zugn14pQL7_3migS4ew&usqp=CAU", false);
+            //AddPatient("Kazoo", "Kid", 10, "https://i.ytimg.com/vi/B1tL6rFsyAQ/hqdefault.jpg", true);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

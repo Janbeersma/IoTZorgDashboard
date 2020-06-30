@@ -60,15 +60,15 @@ namespace ZorgPortalIoT.Forms
                 Patient patient = context.Patient.Find(PatientId);
                 //Haal meest recente hartslag en temperatuur op
                 int? hartslagMeterId = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 2)?.SensorId;
-                int? temeratuurmeterId = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 3)?.SensorId;
+                int? temperatuurmeterId = context.Sensor.FirstOrDefault(sensor => sensor.PatientId == PatientId && sensor.SensorType == 3)?.SensorId;
                 
                 if (hartslagMeterId != null)
                 {
-                    hartslag = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == hartslagMeterId).MetingWaarde.ToString("0.0");
+                    hartslag = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == hartslagMeterId)?.MetingWaarde.ToString("0.0");
                 }
-                if (temeratuurmeterId != null)
+                if (temperatuurmeterId != null)
                 {
-                    temperatuur = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == temeratuurmeterId).MetingWaarde.ToString("0.0");
+                    temperatuur = context.SensorMeting.OrderByDescending(v => v.MetingId).FirstOrDefault(meting => meting.SensorId == temperatuurmeterId)?.MetingWaarde.ToString("0.0");
                 }
             }
 
@@ -141,6 +141,7 @@ namespace ZorgPortalIoT.Forms
 
         private void GenerateGraph()
         {
+            Console.WriteLine("Wack");
             //Verwijder oude punten
             if (InvokeRequired)
             {
